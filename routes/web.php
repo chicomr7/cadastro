@@ -18,5 +18,15 @@ Route::get('/', function () {
 });
 
 
+
 Route::get('/cadastro', 'App\Http\Controllers\CadastroController@cadastroForm')->name ('cadastroForm');
+Route::get('/menu', 'App\Http\Controllers\CadastroController@menuForm')->name ('menuForm');
+Route::get('/lista', 'App\Http\Controllers\CadastroController@listaForm')->name ('listaForm');
+Route::get('/usuarioCadastrado', 'App\Http\Controllers\CadastroController@cadastradoForm')->name ('usuarioCadastradoForm');
+
+
+
+Route::post('/cadastrar-usuario','App\Http\Controllers\CadastroController@cadastroForm')->name ('cadastroCompleto');
+Route::post('/visualizar-lista','App\Http\Controllers\CadastroController@listaForm')->name ('listaFormulario');
+Route::post('/usuario-cadastrado','App\Http\Controllers\CadastroController@cadastradoForm')->name ('cadastradoForm');
 

@@ -27,31 +27,31 @@
         
         <center>
 <div class="class container">
-<div class="row">
-</div>
     <div class="mb-3">
 		
 					
-            <div class="resultado1">Cadastro:</div>
-        
-            <style>
-            .resultado1 {
-                
-                font-size: 40px;
-                color: black;
-                border-radius: 30px;
-                background-color: rgb(0, 255, 179);
-                height: 60px;
-                line-height: 60px;
-                
-            }
-            </style>
+        <div class="resultado1">Cadastro:</div>
     
-    </div>
-		
+        <style>
+        .resultado1 {
+            
+            font-size: 40px;
+            color: black;
+            border-radius: 30px;
+            background-color: rgb(0, 255, 179);
+            height: 60px;
+            line-height: 60px;
+            
+        }
+        </style>
+
+</div>
+<div class="row">
+</div>
+   	
 				<div class="mb-3">
 					
-						<div class="resultado">Insira a baixo seu nome completo:</div>
+						
 					
 						<style>
 						.resultado {
@@ -64,46 +64,34 @@
 						}
 						</style>
                 </div>
-                <div class="mb-3">
-    <input type="text"  class="form-control" id="nome" name="namepessoal" placeholder ="Digite seu nome">
-                </div>
-
-
-
-                <div class="mb-3">
-					
-                    <div class="resultado">Insira a baixo sua data de nascimento:</div>
-                
-            </div>
-            <div class="mb-3">
-<input type="date"  class="form-control" id="data" name="datenasc" >
-            </div>
+           
 
 
             <div class="mb-3">
 					
-                <div class="resultado">Insira a baixo sua senha:</div>
+                <div class="resultado">Se deseja visualizar todos os cadastros:</div>
             
         </div>
-        <div class="mb-3">
-<input type="password"  class="form-control" id="senha" name="senhapessoal" placeholder ="Digite sua senha">
-<span class="lnr lnr-eye"></span>
-        </div>
+        <div class="mb-3">  
+            <form method="POST" action="{{ route('listaFormulario')}}"> 
+                @csrf         
+            <button type="submit"   class="botao">Visualizar cadastros</button>
+            </form>
+            </div>
 
-
+            
+				
         <div class="mb-3">
 					
-            <div class="resultado">Insira a baixo o código da sua matrícula:</div>
+            <div class="resultado">Se deseja cadastrar um novo usuário:</div>
         
     </div>
-    <div class="mb-3">
-<input type="text"  class="form-control" id="matricula" name="matriculapessoal" placeholder ="Digite o código da matrícula">
-    </div>
+          
     
-        <div class="mb-3"> 
-            <form method="POST" action="{{ route('cadastradoForm')}}"> 
-                @csrf         
-            <button type="submit"   class="botao">Cadastrar</button>
+        <div class="mb-3">    
+            <form method="POST" action="{{ route('cadastroCompleto')}}"> 
+             @csrf   
+            <button type="submit"   class="botao">Novo usuário</button>
             </form>
             </div>
         
