@@ -45,10 +45,20 @@ class CadastroController extends Controller
         Usuario::destroy($id);
         return redirect (route ('listaForm'));
     }
+
+
     public function cadastroEnd(){
        return view ('cadastrar_end');
     }
-
+public function cadastrarEnd(Request $request){
+        $endereco = new Endereco();
+        $endereco->nome = $request->nome;
+        $endereco->data_nascimento = $request->data_nascimento;
+        $endereco->senha = $request->senha;
+        $endereco->matricula = $request->matricula;
+        $endereco->save();
+        return view('usuarioCadastrado', compact('endereco'));
+    }
 
 
 
