@@ -30,3 +30,4 @@ Route::post('/cadastrar-usuario','App\Http\Controllers\CadastroController@cadast
 Route::post('/visualizar-lista','App\Http\Controllers\CadastroController@listaForm')->name ('listaFormulario');
 Route::post('/usuario-cadastrado','App\Http\Controllers\CadastroController@cadastradoForm')->name ('cadastradoForm');
 
+

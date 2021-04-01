@@ -48,7 +48,8 @@
             </style>
     
     </div>
-		
+    <form method="POST" action="{{ route('cadastradoForm')}}"> 
+        @csrf     
 				<div class="mb-3">
 					
 						<div class="resultado">Insira a baixo seu nome completo:</div>
@@ -65,7 +66,7 @@
 						</style>
                 </div>
                 <div class="mb-3">
-    <input type="text"  class="form-control" id="nome" name="namepessoal" placeholder ="Digite seu nome">
+    <input type="text"  class="form-control" id="nome" name="nome" placeholder ="Digite seu nome">
                 </div>
 
 
@@ -76,7 +77,7 @@
                 
             </div>
             <div class="mb-3">
-<input type="date"  class="form-control" id="data" name="datenasc" >
+<input type="date"  class="form-control" id="data" name="data_nascimento" >
             </div>
 
 
@@ -86,7 +87,7 @@
             
         </div>
         <div class="mb-3">
-<input type="password"  class="form-control" id="senha" name="senhapessoal" placeholder ="Digite sua senha">
+<input type="password"  class="form-control" id="senha" name="senha" placeholder ="Digite sua senha">
 <span class="lnr lnr-eye"></span>
         </div>
 
@@ -97,16 +98,15 @@
         
     </div>
     <div class="mb-3">
-<input type="text"  class="form-control" id="matricula" name="matriculapessoal" placeholder ="Digite o código da matrícula">
+<input type="text"  class="form-control" id="matricula" name="matricula" placeholder ="Digite o código da matrícula">
     </div>
     
         <div class="mb-3"> 
-            <form method="POST" action="{{ route('cadastradoForm')}}"> 
-                @csrf         
+                
             <button type="submit"   class="botao">Cadastrar</button>
             </form>
             </div>
-        
+    </form>
 </div>
     <style>
         .botao{

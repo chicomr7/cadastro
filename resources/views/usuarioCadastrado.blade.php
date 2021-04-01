@@ -31,7 +31,7 @@
     <div class="mb-3">
 		
 					
-        <div class="resultado1">Cadastro:</div>
+        <div class="resultado1">Usuário cadastrado com sucesso !!</div>
     
         <style>
         .resultado1 {
@@ -47,23 +47,34 @@
         </style>
 
 </div>
-<table class="table table-dark table-striped">
+<table class="table">
+    <style>
+        .table{
+          color:rgb(0, 255, 179);
+          background-color: rgb(15, 15, 15);
+        }
+       </style>
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Data de nascimento</th>
+      <th scope="col">Senha</th>
+      <th scope="col">Matrícula</th>
     </tr>
   </thead>
+
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$usuario->id}}</th>
+      <td>{{$usuario->nome}}</td>
+      <td>{{$usuario->data_nascimento}}</td>
+      <td>{{$usuario->senha}}</td>
+      <td>{{$usuario->matricula}}</td>
     </tr>
   </tbody>
+
+
 </table>
 
            
