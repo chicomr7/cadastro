@@ -61,6 +61,8 @@
       <th scope="col">Data de nascimento</th>
       <th scope="col">Senha</th>
       <th scope="col">Matrícula</th>
+      <th scope="col">Ações</th>
+      <th scope="col">Ações</th>
     </tr>
   </thead>
 
@@ -71,6 +73,15 @@
       <td>{{$usuario->data_nascimento}}</td>
       <td>{{$usuario->senha}}</td>
       <td>{{$usuario->matricula}}</td>
+      <form method="POST" action="{{ route('editar_Usuario', $usuario->id)}}"> 
+        @csrf   
+      <td>  <button type="submit"   class="botao">Editar</button> </td>
+    </form>
+  
+    <form method="POST" action="{{ route('deletar_Usuario', $usuario->id)}}"> 
+      @csrf 
+      <td><button type="submit"   class="botao">Deletar</button></td>
+    </form>
     </tr>
   </tbody>
 

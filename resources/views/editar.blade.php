@@ -27,31 +27,33 @@
         
         <center>
 <div class="class container">
+<div class="row">
+</div>
     <div class="mb-3">
 		
 					
-        <div class="resultado1">Cadastro:</div>
+            <div class="resultado1">Editar cadastro:</div>
+        
+            <style>
+            .resultado1 {
+                
+                font-size: 40px;
+                color: black;
+                border-radius: 30px;
+                background-color: rgb(0, 255, 179);
+                height: 60px;
+                line-height: 60px;
+                
+            }
+            </style>
     
-        <style>
-        .resultado1 {
-            
-            font-size: 40px;
-            color: black;
-            border-radius: 30px;
-            background-color: rgb(0, 255, 179);
-            height: 60px;
-            line-height: 60px;
-            
-        }
-        </style>
-
-</div>
-<div class="row">
-</div>
-   	
+    </div>
+    <form method="POST" action="{{ route('salvarEdicao')}}"> 
+        @csrf     
+        <input type="hidden" name="id" value="{{$usuario->id}}">
 				<div class="mb-3">
 					
-						
+						<div class="resultado">Insira a baixo seu nome completo:</div>
 					
 						<style>
 						.resultado {
@@ -64,38 +66,48 @@
 						}
 						</style>
                 </div>
-           
+                <div class="mb-3">
+    <input type="text"  class="form-control" id="nome" name="nome" placeholder ="Digite seu nome" value="{{$usuario->nome}}">
+                </div>
+
+
+
+                <div class="mb-3">
+					
+                    <div class="resultado">Insira a baixo sua data de nascimento:</div>
+                
+            </div>
+            <div class="mb-3">
+<input type="date"  class="form-control" id="data" name="data_nascimento" value="{{$usuario->data_nascimento}}" >
+            </div>
 
 
             <div class="mb-3">
 					
-                <div class="resultado">Se deseja visualizar todos os cadastros:</div>
+                <div class="resultado">Insira a baixo sua senha:</div>
             
         </div>
-        <div class="mb-3">  
-            <form method="POST" action="{{ route('listaFormulario')}}"> 
-                @csrf         
-            <button type="submit"   class="botao">Visualizar cadastros</button>
-            </form>
-            </div>
+        <div class="mb-3">
+<input type="password"  class="form-control" id="senha" name="senha" placeholder ="Digite sua senha" value="{{$usuario->senha}}">
+<span class="lnr lnr-eye"></span>
+        </div>
 
-            
-				
+
         <div class="mb-3">
 					
-            <div class="resultado">Se deseja cadastrar um novo usuário:</div>
+            <div class="resultado">Insira a baixo o código da sua matrícula:</div>
         
     </div>
-          
+    <div class="mb-3">
+<input type="text"  class="form-control" id="matricula" name="matricula" placeholder ="Digite o código da matrícula" value="{{$usuario->matricula}}">
+    </div>
     
-        <div class="mb-3">    
-            <form method="POST" action="{{ route('cadastroCompleto')}}"> 
-             @csrf   
-            <button type="submit"   class="botao">Novo usuário</button>
+        <div class="mb-3"> 
+                
+            <button type="submit"   class="botao">Salvar edição</button>
             </form>
             </div>
-            
-        
+    </form>
 </div>
     <style>
         .botao{

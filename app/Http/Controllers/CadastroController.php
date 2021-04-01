@@ -28,8 +28,23 @@ class CadastroController extends Controller
        
         return view ('lista', compact('usuarios'));
     }
-    
-
+    public function editarUsuario($id){
+        $usuario = Usuario::where('id', $id)->first();
+        return view ('editar', compact('usuario'));
+    }
+    public function salvarEdicao(Request $request){
+        $usuario = Usuario::where('id', $request->id)->first();
+        $usuario->nome = $request->nome;
+        $usuario->data_nascimento = $request->data_nascimento;
+        $usuario->senha = $request->senha;
+        $usuario->matricula = $request->matricula;
+        $usuario->update();
+       return redirect (route ('listaForm'));
+    }
+    public function deletarUsuario($id){
+        Usuario::destroy($id);
+        return redirect (route ('listaForm'));
+    }
 
 
 

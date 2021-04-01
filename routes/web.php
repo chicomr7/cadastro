@@ -23,11 +23,13 @@ Route::get('/cadastro', 'App\Http\Controllers\CadastroController@cadastroForm')-
 Route::get('/menu', 'App\Http\Controllers\CadastroController@menuForm')->name ('menuForm');
 Route::get('/lista', 'App\Http\Controllers\CadastroController@listaForm')->name ('listaForm');
 Route::get('/usuarioCadastrado', 'App\Http\Controllers\CadastroController@cadastradoForm')->name ('usuarioCadastradoForm');
+Route::get('/editar/{id}', 'App\Http\Controllers\CadastroController@editarUsuario')->name ('editarUsuario');
 
-
-
+Route::post('/editar/{id}', 'App\Http\Controllers\CadastroController@editarUsuario')->name ('editar_Usuario');
 Route::post('/cadastrar-usuario','App\Http\Controllers\CadastroController@cadastroForm')->name ('cadastroCompleto');
 Route::post('/visualizar-lista','App\Http\Controllers\CadastroController@listaForm')->name ('listaFormulario');
 Route::post('/usuario-cadastrado','App\Http\Controllers\CadastroController@cadastradoForm')->name ('cadastradoForm');
+Route::post('/deletar/{id}', 'App\Http\Controllers\CadastroController@deletarUsuario')->name ('deletar_Usuario');
 
+Route::post('salvar_edicao', 'App\Http\Controllers\CadastroController@salvarEdicao')->name ('salvarEdicao');
 
