@@ -31,5 +31,7 @@ Route::post('/visualizar-lista','App\Http\Controllers\CadastroController@listaFo
 Route::post('/usuario-cadastrado','App\Http\Controllers\CadastroController@cadastradoForm')->name ('cadastradoForm');
 Route::post('/deletar/{id}', 'App\Http\Controllers\CadastroController@deletarUsuario')->name ('deletar_Usuario');
 
-Route::post('salvar_edicao', 'App\Http\Controllers\CadastroController@salvarEdicao')->name ('salvarEdicao');
+Route::post('/salvar_edicao', 'App\Http\Controllers\CadastroController@salvarEdicao')->name ('salvarEdicao');
 
+Route::get('/cadastroEndereco', 'App\Http\Controllers\CadastroController@cadastroEnd')->name ('cadastro_Endereco');
+Route::post('/cadastro-Endereco', 'App\Http\Controllers\CadastroController@cadastroEnd')->name ('cadastroEndereco');

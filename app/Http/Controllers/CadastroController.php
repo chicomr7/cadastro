@@ -45,6 +45,10 @@ class CadastroController extends Controller
         Usuario::destroy($id);
         return redirect (route ('listaForm'));
     }
+    public function cadastroEnd(){
+       return view ('cadastrar_end');
+    }
+
 
 
 
