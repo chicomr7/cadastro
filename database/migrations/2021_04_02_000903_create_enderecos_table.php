@@ -17,7 +17,7 @@ class CreateEnderecosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->integer("CEPusuario");
-            $table->string("logradoudoUsuario");
+            $table->string("logadouroUsuario");
             $table->integer("NcasaUsuario");
             $table->string("complementoUsuario");
             $table->string("bairroUsuario");
@@ -25,6 +25,7 @@ class CreateEnderecosTable extends Migration
             $table->string("estadoUsuario");
         });
     }
+
 
     /**
      * Reverse the migrations.

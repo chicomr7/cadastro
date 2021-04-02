@@ -27,10 +27,11 @@
         
         <center>
 <div class="class container">
+
     <div class="mb-3">
 		
 					
-        <div class="resultado1">Cadastro:</div>
+        <div class="resultado1">Endereços:</div>
     
         <style>
         .resultado1 {
@@ -46,86 +47,71 @@
         </style>
 
 </div>
-<div class="row">
-</div>
-   	
-				<div class="mb-3">
-					
-						
-					
-						<style>
-						.resultado {
-							color: black;
-							border-radius: 30px;
-							background-color: gray;
-							height: 40px;
-							line-height: 40px;
-							
-						}
-						</style>
-                </div>
+<table class="table">
+  <style>
+  .table{
+    color:rgb(0, 255, 179);
+    background-color: rgb(15, 15, 15);
+  }
+ </style>
+  <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">CEP</th>
+        <th scope="col">Logadouro</th>
+        <th scope="col">Número</th>
+        <th scope="col">Complemento</th>
+        <th scope="col">Bairro</th>
+        <th scope="col">Cidade</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Ações</th>
+        <th scope="col">Ações</th>
+    </tr>
+  </thead>
+@foreach ( $enderecos as $endereco)
+<tbody>
+  <tr>
+    <th scope="row">{{$endereco->id}}</th>
+    <td>{{$endereco->CEPusuario}}</td>
+    <td>{{$endereco->logadouroUsuario}}</td>
+    <td>{{$endereco->NcasaUsuario}}</td>
+    <td>{{$endereco->complementoUsuario}}</td>
+    <td>{{$endereco->bairroUsuario}}</td>
+    <td>{{$endereco->cidadeUsuario}}</td>
+    <td>{{$endereco->estadoUsuario}}</td>
+
+    <form method="POST" action="{{ route('editarEndereco', $endereco->id)}}"> 
+        @csrf 
+    <td>  <button type="submit"   class="botao">Editar</button> </td>
+    </form>
+
+    <form method="POST" action="{{ route('deletar_Endereco', $endereco->id)}}"> 
+        @csrf 
+    <td><button type="submit"   class="botao">Deletar</button></td>
+    </form>
+  </tr>
+
+
+
+</tbody>
+@endforeach
+ 
+
+
+</table>
+
            
 
 
-            <div class="mb-3">
-					
-                <div class="resultado">Se deseja visualizar todos os cadastros:</div>
-            
-        </div>
-        <div class="mb-3">  
-            <form method="POST" action="{{ route('listaFormulario')}}"> 
-                @csrf         
-            <button type="submit"   class="botao">Visualizar cadastros</button>
-            </form>
-            </div>
-
-            
 				
-        <div class="mb-3">
-					
-            <div class="resultado">Se deseja cadastrar um novo usuário:</div>
-        
-    </div>
-          
+       
     
         <div class="mb-3">    
-            <form method="POST" action="{{ route('cadastroCompleto')}}"> 
+            <form method="GET" action="{{ route('menuForm')}}"> 
              @csrf   
-            <button type="submit"   class="botao">Novo usuário</button>
+            <button type="submit"   class="botao">Retornar ao menu</button>
             </form>
             </div>
-
-           
-              
-    
-                
-                    
-            <div class="mb-3">
-                        
-                <div class="resultado">Se deseja cadastrar um novo endereço:</div>
-            
-        </div>
-              
-        
-            <div class="mb-3">    
-                <form method="POST" action="{{ route('cadastroEndereco')}}"> 
-                 @csrf   
-                <button type="submit"   class="botao">Cadastrar endereço</button>
-                </form>
-                </div>
-<div class="mb-3">
-                <div class="resultado">Se deseja listar os endereços cadastrados:</div>
-            
-        </div>
-              
-        
-            <div class="mb-3">    
-                <form method="POST" action="{{ route('listarEndereco')}}"> 
-                 @csrf   
-                <button type="submit"   class="botao">Visualizar endereços</button>
-                </form>
-                </div>
-            
         
 </div>
     <style>

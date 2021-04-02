@@ -48,8 +48,9 @@
             </style>
     
     </div>
-    <form method="POST" action="{{ route('cadastrarEndereco')}}"> 
+    <form method="POST" action="{{ route('salvar_edicao_Endereco')}}"> 
         @csrf     
+        <input type="hidden" name="id" value="{{$endereco->id}}">
 				<div class="mb-3">
 					
 						<div class="resultado">Insira a baixo o CEP da sua cidade:</div>
@@ -66,7 +67,7 @@
 						</style>
                 </div>
                 <div class="mb-3">
-    <input type="number"  class="form-control" id="CEP" name="CEPusuario" >
+    <input type="number"  class="form-control" id="CEP" name="CEPusuario" value="{{$endereco->CEPusuario}}" >
                 </div>
 
 
@@ -77,7 +78,7 @@
                 
             </div>
             <div class="mb-3">
-<input type="text"  class="form-control" id="logadouro" name="logadouroUsuario" >
+<input type="text"  class="form-control" id="logadouro" name="logadouroUsuario" value="{{$endereco->logadouroUsuario}}" >
             </div>
 
 
@@ -87,7 +88,7 @@
             
         </div>
         <div class="mb-3">
-<input type="number"  class="form-control" id="nCasa" name="NcasaUsuario" >
+<input type="number"  class="form-control" id="nCasa" name="NcasaUsuario" value="{{$endereco->NcasaUsuario}}" >
         </div>
 
 
@@ -97,7 +98,7 @@
         
     </div>
     <div class="mb-3">
-<input type="text"  class="form-control" id="complemento" name="complementoUsuario" >
+<input type="text"  class="form-control" id="complemento" name="complementoUsuario" value="{{$endereco->complementoUsuario}}" >
     </div>
 
     <div class="mb-3">
@@ -106,7 +107,7 @@
     
 </div>
 <div class="mb-3">
-<input type="text"  class="form-control" id="bairro" name="bairroUsuario" >
+<input type="text"  class="form-control" id="bairro" name="bairroUsuario" value="{{$endereco->bairroUsuario}}" >
 </div>
 
 <div class="mb-3">
@@ -115,7 +116,7 @@
 
 </div>
 <div class="mb-3">
-<input type="text"  class="form-control" id="cidade" name="cidadeUsuario" >
+<input type="text"  class="form-control" id="cidade" name="cidadeUsuario" value="{{$endereco->cidadeUsuario}}" >
 </div>
 
 <div class="mb-3">
@@ -124,7 +125,7 @@
 
 </div>
 <div class="mb-3">
-<input type="text"  class="form-control" id="estado" name="estadoUsuario" >
+<input type="text"  class="form-control" id="estado" name="estadoUsuario" value="{{$endereco->estadoUsuario}}" >
 </div>
 
 
@@ -133,7 +134,7 @@
     
         <div class="mb-3"> 
                 
-            <button type="submit"   class="botao">Cadastrar</button>
+            <button type="submit"   class="botao">Editar endereço</button>
             </form>
             </div>
   
@@ -183,3 +184,25 @@
 </center>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -31,7 +31,7 @@
     <div class="mb-3">
 		
 					
-        <div class="resultado1">Usuário cadastrado com sucesso !!</div>
+        <div class="resultado1">Endereço cadastrado com sucesso !!</div>
     
         <style>
         .resultado1 {
@@ -57,10 +57,13 @@
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Data de nascimento</th>
-      <th scope="col">Senha</th>
-      <th scope="col">Matrícula</th>
+      <th scope="col">CEP</th>
+      <th scope="col">Logadouro</th>
+      <th scope="col">Número</th>
+      <th scope="col">Complemento</th>
+      <th scope="col">Bairro</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Estado</th>
       <th scope="col">Ações</th>
       <th scope="col">Ações</th>
     </tr>
@@ -68,20 +71,21 @@
 
   <tbody>
     <tr>
-      <th scope="row">{{$usuario->id}}</th>
-      <td>{{$usuario->nome}}</td>
-      <td>{{$usuario->data_nascimento}}</td>
-      <td>{{$usuario->senha}}</td>
-      <td>{{$usuario->matricula}}</td>
-      <form method="POST" action="{{ route('editar_Usuario', $usuario->id)}}"> 
-        @csrf   
+      <th scope="row">{{$endereco->id}}</th>
+      <td>{{$endereco->CEPusuario}}</td>
+      <td>{{$endereco->logadouroUsuario}}</td>
+      <td>{{$endereco->NcasaUsuario}}</td>
+      <td>{{$endereco->complementoUsuario}}</td>
+      <td>{{$endereco->bairroUsuario}}</td>
+      <td>{{$endereco->cidadeUsuario}}</td>
+      <td>{{$endereco->estadoUsuario}}</td>
+      
       <td>  <button type="submit"   class="botao">Editar</button> </td>
-    </form>
+    
   
-    <form method="POST" action="{{ route('deletar_Usuario', $usuario->id)}}"> 
-      @csrf 
+    
       <td><button type="submit"   class="botao">Deletar</button></td>
-    </form>
+    
     </tr>
   </tbody>
 

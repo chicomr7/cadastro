@@ -35,3 +35,16 @@ Route::post('/salvar_edicao', 'App\Http\Controllers\CadastroController@salvarEdi
 
 Route::get('/cadastroEndereco', 'App\Http\Controllers\CadastroController@cadastroEnd')->name ('cadastro_Endereco');
 Route::post('/cadastro-Endereco', 'App\Http\Controllers\CadastroController@cadastroEnd')->name ('cadastroEndereco');
+Route::post('/Endereco-cadastrado', 'App\Http\Controllers\CadastroController@cadastrarEnd')->name ('cadastrarEndereco');
+
+Route::get('/lista-Endereco', 'App\Http\Controllers\CadastroController@listaEnd')->name ('lista_endereco');
+Route::post('/listar-Endereco', 'App\Http\Controllers\CadastroController@listaEnd')->name ('listarEndereco');
+
+
+Route::post('/editar-endereco', 'App\Http\Controllers\CadastroController@salvarEdicaoEndereco')->name ('salvar_edicao_Endereco');
+
+Route::post('/editarEnderecoo/{id}', 'App\Http\Controllers\CadastroController@editar_Endereco')->name ('editarEndereco');
+
+Route::post('/deletar-endereco/{id}', 'App\Http\Controllers\CadastroController@deletarEndereco')->name ('deletar_Endereco');
+
+
